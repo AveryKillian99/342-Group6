@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Pending Payments</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Variable to keep track of the last clicked button
+        let lastClickedButton = null;
+
+        function processPayment(event, transactionId) {
+            alert("Processing payment for Transaction ID: " + transactionId);
+
+            // Make the button bold when clicked
+            event.target.style.fontWeight = 'bold';
+
+            // Unbold the last clicked button if it's different from the current one
+            if (lastClickedButton && lastClickedButton !== event.target) {
+                lastClickedButton.style.fontWeight = 'normal';
+            }
+
+            // Update last clicked button
+            lastClickedButton = event.target;
+
+            // Here you can add your API call to process the payment
+        }
+
+        function cancelPayment(event, transactionId) {
+            alert("Cancelling payment for Transaction ID: " + transactionId);
+
+            // Make the button bold when clicked
+            event.target.style.fontWeight = 'bold';
+
+            // Unbold the last clicked button if it's different from the current one
+            if (lastClickedButton && lastClickedButton !== event.target) {
+                lastClickedButton.style.fontWeight = 'normal';
+            }
+
+            // Update last clicked button
+            lastClickedButton = event.target;
+
+            // Here you can add your API call to cancel the payment
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Payment Management</h1>
+        <nav>
+            <ul>
+                <li><a href="../admin.html">Dashboard</a></li>
+                <li><a href="../user-management/user-management.html">User Management</a></li>
+                <li><a href="payment-management.html">Payment Management</a></li>
+                <li><a href="../system-maintenance/system-maintenance.html">System Maintenance</a></li>
+                <li><a href="../analytics/analytics.html">Analytics & Reports</a></li>
+                <li><a href="../support/support.html">Customer Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>View Pending Payments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Driver Name</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>John Doe</td>
+                        <td>$25.00</td>
+                        <td>Pending</td>
+                        <td>
+                            <button onclick="processPayment(event, '#001')">Process</button>
+                            <button onclick="cancelPayment(event, '#001')">Cancel</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>Jane Smith</td>
+                        <td>$30.00</td>
+                        <td>Pending</td>
+                        <td>
+                            <button onclick="processPayment(event, '#002')">Process</button>
+                            <button onclick="cancelPayment(event, '#002')">Cancel</button>
+                        </td>
+                    </tr>
+                    <!-- Additional rows can be added here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

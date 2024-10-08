@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Earnings Report</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Function to generate the driver earnings report
+        function generateEarningsReport() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const driverName = document.getElementById('driver-name').value;
+            const location = document.getElementById('location').value;
+
+            // Simulate report generation
+            alert(`Generating Driver Earnings Report\nFrom: ${startDate}\nTo: ${endDate}\nDriver: ${driverName}\nLocation: ${location}`);
+
+            // Here, you can add your logic to fetch and display the report data from the server
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Analytics & Reports</h1>
+        <nav>
+            <ul>
+                <li><a href="../admin.html">Dashboard</a></li>
+                <li><a href="../user-management/user-management.html">User Management</a></li>
+                <li><a href="../payment-management/payment-management.html">Payment Management</a></li>
+                <li><a href="../system-maintenance/system-maintenance.html">System Maintenance</a></li>
+                <li><a href="analytics.html">Analytics & Reports</a></li>
+                <li><a href="../support/support.html">Customer Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Driver Earnings Reports</h2>
+            <form onsubmit="event.preventDefault(); generateEarningsReport();">
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" required>
+                <br>
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" required>
+                <br>
+                <label for="driver-name">Driver Name (optional):</label>
+                <input type="text" id="driver-name" placeholder="Enter driver name">
+                <br>
+                <label for="location">Location (optional):</label>
+                <input type="text" id="location" placeholder="Enter location">
+                <br>
+                <button type="submit">Generate Report</button>
+            </form>
+            <div id="report-results" style="margin-top: 20px;">
+                <!-- Report results will be displayed here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

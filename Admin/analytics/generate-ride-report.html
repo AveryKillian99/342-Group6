@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Ride Report</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Function to generate a ride report based on user input
+        function generateReport() {
+            const startDate = document.getElementById('start-date').value;
+            const endDate = document.getElementById('end-date').value;
+            const reportType = document.getElementById('report-type').value;
+
+            // Simulate report generation
+            alert(`Generating ${reportType} from ${startDate} to ${endDate}`);
+
+            // Here you can add logic to fetch the report data from the server
+            // and display it on the page
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Analytics & Reports</h1>
+        <nav>
+            <ul>
+                <li><a href="../admin.html">Dashboard</a></li>
+                <li><a href="../user-management/user-management.html">User Management</a></li>
+                <li><a href="../payment-management/payment-management.html">Payment Management</a></li>
+                <li><a href="../system-maintenance/system-maintenance.html">System Maintenance</a></li>
+                <li><a href="analytics.html">Analytics & Reports</a></li>
+                <li><a href="../support/support.html">Customer Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Generate Ride Report</h2>
+            <form onsubmit="event.preventDefault(); generateReport();">
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" required>
+                <br>
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" required>
+                <br>
+                <label for="report-type">Report Type:</label>
+                <select id="report-type">
+                    <option value="daily">Daily Report</option>
+                    <option value="weekly">Weekly Report</option>
+                    <option value="monthly">Monthly Report</option>
+                </select>
+                <br>
+                <button type="submit">Generate Report</button>
+            </form>
+            <div id="report-results" style="margin-top: 20px;">
+                <!-- Report results will be displayed here -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

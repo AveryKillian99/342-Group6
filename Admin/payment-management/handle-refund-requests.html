@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handle Refund Requests</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Function to process refund request
+        function processRefund(event, transactionId) {
+            alert("Processing refund for Transaction ID: " + transactionId);
+
+            // Unbold all buttons
+            resetButtonStyles();
+
+            // Make the clicked button bold
+            event.target.style.fontWeight = 'bold';
+
+            // Here you can add your API call to process the refund
+        }
+
+        // Function to cancel refund request
+        function cancelRefund(event, transactionId) {
+            alert("Cancelling refund for Transaction ID: " + transactionId);
+
+            // Unbold all buttons
+            resetButtonStyles();
+
+            // Make the clicked button bold
+            event.target.style.fontWeight = 'bold';
+
+            // Here you can add your API call to cancel the refund
+        }
+
+        // Function to reset button styles
+        function resetButtonStyles() {
+            // Get all buttons in the table
+            const buttons = document.querySelectorAll('table button');
+            buttons.forEach(button => {
+                button.style.fontWeight = 'normal'; // Reset font weight
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Payment Management</h1>
+        <nav>
+            <ul>
+                <li><a href="../admin.html">Dashboard</a></li>
+                <li><a href="../user-management/user-management.html">User Management</a></li>
+                <li><a href="payment-management.html">Payment Management</a></li>
+                <li><a href="../system-maintenance/system-maintenance.html">System Maintenance</a></li>
+                <li><a href="../analytics/analytics.html">Analytics & Reports</a></li>
+                <li><a href="../support/support.html">Customer Support</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Handle Refund Requests</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Transaction ID</th>
+                        <th>Driver Name</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>John Doe</td>
+                        <td>$25.00</td>
+                        <td>Refund Requested</td>
+                        <td>
+                            <button onclick="processRefund(event, '#001')">Process Refund</button>
+                            <button onclick="cancelRefund(event, '#001')">Cancel Request</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>Jane Smith</td>
+                        <td>$30.00</td>
+                        <td>Refund Requested</td>
+                        <td>
+                            <button onclick="processRefund(event, '#002')">Process Refund</button>
+                            <button onclick="cancelRefund(event, '#002')">Cancel Request</button>
+                        </td>
+                    </tr>
+                    <!-- Additional rows can be added here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
