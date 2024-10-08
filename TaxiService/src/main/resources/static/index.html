@@ -1,18 +1,143 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>Taxi Service</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="style.css" />
-    </head>
-    <body>
-        <h1>Taxi Service</h1>
-            <div class="topnav">
-                <a class="active" href="index.html">Home</a>
-                <a href="map.html">Map</a>
-                <a href="profile.html">Profile</a>
-                <a href="login.html">Login</a>
-            </div>
-        <p> To get started, login and after selecting the map, you can enter your destination to look for an available driver</p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .container-wrapper {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            max-width: 900px;
+        }
+        .half {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .signin-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .login-btn:hover {
+            background-color: #45a049;
+        }
+        .create-account {
+            display: block;
+            margin-top: 15px;
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+        }
+        .create-account a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .create-account a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Title -->
+<h1 class="title">Taxi-Service</h1>
+
+<div class="container-wrapper">
+    <!-- Producer Sign In Section -->
+    <div class="half">
+        <div class="signin-container">
+            <h2>Producer Sign In</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username-producer">Username</label>
+                    <input type="text" id="username-producer" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-producer">Password</label>
+                    <input type="password" id="password-producer" name="password" required>
+                </div>
+                <a href="producer-home.html" class="login-btn">Log In</a>
+                <div class="create-account">
+                    <p>Don't have an account? <a href="producer-create-account.html">Create one here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Consumer Sign In Section -->
+    <div class="half">
+        <div class="signin-container">
+            <h2>Consumer Sign In</h2>
+            <form>
+                <div class="form-group">
+                    <label for="username-consumer">Username</label>
+                    <input type="text" id="username-consumer" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password-consumer">Password</label>
+                    <input type="password" id="password-consumer" name="password" required>
+                </div>
+                <a href="consumer-home.html" class="login-btn">Log In</a>
+                <div class="create-account">
+                    <p>Don't have an account? <a href="consumer-create-account.html">Create one here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
+
