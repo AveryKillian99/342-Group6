@@ -1,6 +1,4 @@
-package com.Group6.BackendApiProgress.user.Producer;
-
-import com.Group6.BackendApiProgress.user.Producer;
+package com.Group6.BackendApiProgress.Producer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

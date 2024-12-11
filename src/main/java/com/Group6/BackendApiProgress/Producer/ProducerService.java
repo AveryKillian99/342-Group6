@@ -1,7 +1,4 @@
-package com.Group6.BackendApiProgress.user.Producer;
-
-import com.Group6.BackendApiProgress.user.Producer;
-import ProducerRepository;
+package com.Group6.BackendApiProgress.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
