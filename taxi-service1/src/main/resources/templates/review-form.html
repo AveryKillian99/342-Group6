@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add/Update Review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1 th:text="${review.id == null ? 'Add a New Review' : 'Update Review'}"></h1>
+
+<form th:action="@{${review.id == null ? '/reviews/add' : '/reviews/update/' + review.id}}"
+      th:object="${review}" method="post">
+
+  <label for="userId">User ID:</label>
+  <input type="text" th:field="*{userId}" id="userId" required><br><br>
+
+  <label for="serviceId">Service ID:</label>
+  <input type="text" th:field="*{serviceId}" id="serviceId" required><br><br>
+
+  <label for="content">Content:</label>
+  <textarea th:field="*{content}" id="content" required></textarea><br><br>
+
+  <label for="status">Status:</label>
+  <input type="text" th:field="*{status}" id="status"><br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<a href="/reviews">Back to Reviews</a>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taxi Services Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Taxi Services Management</h1>
+</header>
+<main>
+  <div class="container">
+    <a href="add-service.html" class="button">Add New Service</a>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Services will load dynamically here -->
+    </tbody>
+  </table>
+</main>
+<script>
+  // Fetch and display services from the API
+  fetch('/api/services')
+      .then(response => response.json())
+      .then(data => {
+          const tbody = document.querySelector('tbody');
+          data.forEach(service => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                  <td>${service.id}</td>
+                  <td>${service.name}</td>
+                  <td>${service.description}</td>
+                  <td>${service.status}</td>
+                  <td>
+                      <button class="delete-btn" data-id="${service.id}">Delete</button>
+                  </td>
+              `;
+              tbody.appendChild(row);
+          });
+
+          // Add delete functionality
+          document.querySelectorAll('.delete-btn').forEach(button => {
+              button.addEventListener('click', () => {
+                  const id = button.dataset.id;
+                  fetch(`/api/services/${id}`, { method: 'DELETE' })
+                      .then(() => {
+                          alert('Service deleted successfully');
+                          button.closest('tr').remove();
+                      })
+                      .catch(err => console.error('Delete failed:', err));
+              });
+          });
+      })
+      .catch(err => console.error('Error fetching services:', err));
+</script>
+</body>
+</html>
