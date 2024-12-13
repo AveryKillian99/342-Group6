@@ -13,15 +13,19 @@ public class Producer {
     @Column(nullable = false)
     private String producerName;
 
-    @Column
+    @Column(nullable = false)
     private String producerEmail;
 
-    //@Column
+    @Column(nullable = false)
+    private String producerPassword;
 
 
     public Producer(int producerId, String producerName, String producerType){
         this.producerId = producerId;
         this.producerName = producerName;
+        this.producerEmail = producerEmail;
+        this.producerPassword = producerPassword;
+
     }
 
     public Producer(String producerName, String producerType){
@@ -42,6 +46,14 @@ public class Producer {
     public String getProducerName(){return producerName;}
 
     public void setProducerName(String producerName){this.producerName = producerName;}
+
+    public String getProducerEmail(){return producerEmail;}
+
+    public void setProducerEmail(String producerEmail){this.producerEmail=producerEmail;}
+
+    public String getProducerPassword(){return producerPassword;}
+
+    public void setProducerPassword(String producerPassword){this.producerPassword=producerPassword;}
 
 
 }
